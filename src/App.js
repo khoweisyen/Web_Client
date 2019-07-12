@@ -41,10 +41,10 @@ class App extends Component {
       case 'text_tx':
         {
           if (pos == 0) {
-            Axios.get(`http://localhost:4000/services/set_data`)
+            Axios.get(`https://web-srv.herokuapp.com/services/set_data`)
               .then(res => {
                 Axios.get(
-                  `http://localhost:4000/services/get_data?SearchTxt=${text}`
+                  `https://web-srv.herokuapp.com/services/get_data?SearchTxt=${text}`
                 )
                   .then(res_2 => {
                     this.setState({
@@ -60,10 +60,10 @@ class App extends Component {
                 alert('Server error!');
               });
           } else {
-            Axios.get(`http://localhost:4000/accessories/set_data`)
+            Axios.get(`https://web-srv.herokuapp.com/accessories/set_data`)
               .then(res => {
                 Axios.get(
-                  `http://localhost:4000/accessories/get_data?SearchTxt=${text}`
+                  `https://web-srv.herokuapp.com/accessories/get_data?SearchTxt=${text}`
                 )
                   .then(res_2 => {
                     this.setState({
@@ -82,7 +82,7 @@ class App extends Component {
         }
         break;
 
-      //case 'sort_up':
+        //case 'sort_up':
         {
           this.setState({
             result_list: this.state.result_list.sort(function(a, b) {
@@ -98,7 +98,7 @@ class App extends Component {
             })
           });
         }
-        //break;
+      //break;
 
       case 'sort_down':
         {
@@ -203,7 +203,6 @@ class App extends Component {
                         className="card"
                         style={{ marginBottom: '20px' }}
                       >
-                        
                         <div className="card-body bg-primary">
                           <div className="row">
                             <div className="col-8 text-left text-white">
